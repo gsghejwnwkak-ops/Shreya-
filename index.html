@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Shreya ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Georgia', serif;
+}
+
+body{
+    background: linear-gradient(135deg,#000,#111,#1a1a1a);
+    overflow:hidden;
+    color:#fff;
+}
+
+.container{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+
+.page{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+    text-align:center;
+    animation: fade 1s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:scale(.95);}
+    to{opacity:1; transform:scale(1);}
+}
+
+h1,h2{
+    color:#d4af37;
+    text-shadow:0 0 15px rgba(212,175,55,0.5);
+}
+
+p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.next-btn{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    background:linear-gradient(45deg,#d4af37,#ffd700);
+    color:#000;
+    font-weight:bold;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.next-btn:hover{
+    transform:scale(1.1);
+}
+
+.gift-box{
+    width:180px;
+    height:180px;
+    background:#111;
+    border:4px solid #d4af37;
+    position:relative;
+    cursor:pointer;
+    animation: floatBox 2s infinite ease-in-out;
+}
+
+.gift-box::before{
+    content:"";
+    width:40px;
+    height:180px;
+    background:#d4af37;
+    position:absolute;
+    left:70px;
+}
+
+.gift-box::after{
+    content:"";
+    width:180px;
+    height:40px;
+    background:#d4af37;
+    position:absolute;
+    top:70px;
+}
+
+@keyframes floatBox{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+.photo{
+    width:260px;
+    height:400px;
+    object-fit:cover;
+    border:4px solid #d4af37;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(212,175,55,0.3);
+    margin:20px;
+}
+
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.heart{
+    position:absolute;
+    color:#d4af37;
+    animation: floatHeart linear infinite;
+    opacity:.8;
+}
+
+@keyframes floatHeart{
+    from{
+        transform:translateY(100vh) scale(0);
+    }
+    to{
+        transform:translateY(-10vh) scale(1.5);
+    }
+}
+
+.letter{
+    background:rgba(255,255,255,0.05);
+    border:1px solid #d4af37;
+    padding:30px;
+    border-radius:20px;
+    max-width:800px;
+    backdrop-filter: blur(10px);
+}
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:gold;
+    top:-10px;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hearts" id="hearts"></div>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <h1>🎁 Happy Birthday Shreya 🎁</h1>
+    <br>
+    <p>A special surprise from Saad ❤️</p>
+    <br><br>
+    <div class="gift-box" onclick="openGift()"></div>
+    <p style="margin-top:20px;">Tap the gift to open</p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h2>Page 1</h2>
+    <img src="IMG_3992.jpeg" class="photo">
+    <p>
+        Every moment with you feels magical. 
+        Your smile lights up my world.
+    </p>
+    <button class="next-btn" onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <h2>Page 2</h2>
+    <img src="IMG_3991.jpeg" class="photo">
+    <p>
+        Even your silly moments are precious to me.
+        They make life brighter and sweeter.
+    </p>
+    <button class="next-btn" onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <h2>Page 3</h2>
+    <img src="IMG_3990.jpeg" class="photo">
+    <p>
+        Your beauty, your kindness, your soul...
+        everything about you feels perfect.
+    </p>
+    <button class="next-btn" onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+    <h2>Page 4</h2>
+    <p>
+        I’m grateful for every laugh, every conversation,
+        every memory we’ve shared together.
+    </p>
+    <button class="next-btn" onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+    <h2>Page 5</h2>
+    <p>
+        Today is your day, and I just want you to know
+        how deeply special you are to me.
+    </p>
+    <button class="next-btn" onclick="nextPage()">Next ❤️</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+    <h2>My Letter To You 💌</h2>
+    <div class="letter">
+        <p>
+            Dear Shreya,<br><br>
+
+            Happy Birthday, my love.<br><br>
+
+            On this special day, I just want to remind you how much you mean to me.
+            You are the calm in my chaos, the warmth in my coldest days,
+            and the reason behind so many smiles.<br><br>
+
+            Meeting you changed everything in ways I never imagined.
+            Your laughter, your eyes, your presence — they make life feel beautiful.<br><br>
+
+            I wish for your happiness, your dreams, and all the love this world can give.
+            And if I can be part of making your life brighter,
+            that would be my greatest gift.<br><br>
+
+            Happy Birthday, my Shreya.<br>
+            Forever yours,<br>
+            <b>Saad ❤️</b>
+        </p>
+    </div>
+</div>
+
+</div>
+
+<script>
+let currentPage = 1;
+
+function openGift(){
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+    currentPage = 2;
+    startConfetti();
+}
+
+function nextPage(){
+    document.getElementById('page'+currentPage).classList.remove('active');
+    currentPage++;
+    document.getElementById('page'+currentPage).classList.add('active');
+    startConfetti();
+}
+
+function createHearts(){
+    const hearts = document.getElementById('hearts');
+
+    for(let i=0;i<30;i++){
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML='❤';
+        heart.style.left=Math.random()*100+'vw';
+        heart.style.fontSize=(Math.random()*25+15)+'px';
+        heart.style.animationDuration=(Math.random()*8+5)+'s';
+        heart.style.animationDelay=Math.random()*5+'s';
+        hearts.appendChild(heart);
+    }
+}
+createHearts();
+
+function startConfetti(){
+    for(let i=0;i<80;i++){
+        const confetti=document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left=Math.random()*100+'vw';
+        confetti.style.animationDuration=(Math.random()*3+2)+'s';
+        confetti.style.width=(Math.random()*8+5)+'px';
+        confetti.style.height=confetti.style.width;
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+}
+</script>
+
+</body>
+</html>
